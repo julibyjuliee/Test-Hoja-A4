@@ -13,7 +13,7 @@ function cloudinary() {
 
         formData.append("file", archivo);
         formData.append("upload_preset", CLOUDINARY_ID);
-
+        
         // Envio hacia cloudinary
         var res = await axios.post(CLOUDINARY_URL, formData, {
             headers: {
@@ -27,15 +27,13 @@ function cloudinary() {
 
 //Funcion que valida el formato de la extension 
 function validarExtension() {
-    const subirImagen = document.getElementById("subirImagen").value;
-    if (subirImagen != "") {
-        var verificar = subirImagen.toLowerCase();
+    const cargarImagen = document.getElementById("subirImagen").value;
+    if (cargarImagen != "") {
+        var verificar = cargarImagen.toLowerCase();
         if (!verificar.match(/(\.jpg|\.JPG)$/)) {
             swal("Error: El formato no es compatible.");
-            document.getElementById("subirImagen").value = "";
+            document.getElementById("cargarImagen").value = "";
         }
         cloudinary();
     }
 }
-
-
