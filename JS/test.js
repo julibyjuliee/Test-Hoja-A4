@@ -5,14 +5,17 @@ const CLOUDINARY_URL = `https://api.cloudinary.com/v1_1/dvi9x9ssf/image/upload`;
 const CLOUDINARY_ID = "nri5jvre";
 
 function cloudinary() {
+    //Capturamos el evento 
     subirImagen.addEventListener("change", async (e) => {
-        const file = e.target.files[0];
+
+        const archivo = e.target.files[0];
         const formData = new FormData();
-        formData.append("file", file);
+
+        formData.append("file", archivo);
         formData.append("upload_preset", CLOUDINARY_ID);
 
         // Envio hacia cloudinary
-        const res = await axios.post(CLOUDINARY_URL, formData, {
+        var res = await axios.post(CLOUDINARY_URL, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -22,6 +25,7 @@ function cloudinary() {
     });
 }
 
+//Funcion que valida el formato de la extension 
 function validarExtension() {
     const subirImagen = document.getElementById("subirImagen").value;
     if (subirImagen != "") {
@@ -33,3 +37,5 @@ function validarExtension() {
         cloudinary();
     }
 }
+
+
