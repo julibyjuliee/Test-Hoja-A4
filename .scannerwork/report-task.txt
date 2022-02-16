@@ -1,0 +1,6 @@
+projectKey=TestHojaA4
+serverUrl=http://localhost:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://localhost:9000/dashboard?id=TestHojaA4
+ceTaskId=AX8D3_twzFG3Xia05eI4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX8D3_twzFG3Xia05eI4

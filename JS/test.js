@@ -32,7 +32,6 @@ function validarExtension() {
         var verificar = cargarImagen.toLowerCase();
         if (!verificar.match(/(\.jpg|\.JPG)$/)) {
             swal("Error: El formato no es compatible.");
-            document.getElementById("cargarImagen").value = "";
         }
         cloudinary();
     }
